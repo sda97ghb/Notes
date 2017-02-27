@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Notes
 {
-    public partial class NoteControl1 : UserControl
+    public partial class NoteControl : UserControl
     {
-        public NoteControl1()
+        public NoteControl()
         {
             InitializeComponent();
         }

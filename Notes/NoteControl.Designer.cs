@@ -1,6 +1,6 @@
 ﻿namespace Notes
 {
-    partial class NoteControl1
+    partial class NoteControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,7 +34,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(274, 0);
+            this.EditButton.Location = new System.Drawing.Point(246, 29);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(40, 40);
             this.EditButton.TabIndex = 0;
@@ -51,15 +51,15 @@
             this.Text.Text = "Wake up (wake up)";
             this.Text.Click += new System.EventHandler(this.Text_Click);
             // 
-            // NoteControl1
+            // NoteControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(220)))), ((int)(((byte)(236)))));
             this.Controls.Add(this.Text);
             this.Controls.Add(this.EditButton);
-            this.Name = "NoteControl1";
-            this.Size = new System.Drawing.Size(350, 300);
+            this.Name = "NoteControl";
+            this.Size = new System.Drawing.Size(380, 230);
             this.ResumeLayout(false);
             this.PerformLayout();
 
