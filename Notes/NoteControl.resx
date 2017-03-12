@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Text.Text" xml:space="preserve">
+    <value>Большой, огромный, длинючий-предлинючий текст на русском языке, в которм вам не предлагают съесть еще этих мягких французских булок и выпить яду. И еще немного бессмысленных сочетаний букв до кучи: йцу йцуйцуйц цйу йцу йцу йц вфы вфвфы вфывфывфы йц  кцук цук ццу 23234 уц к 23 3к 3к23 к2к куцк 324 2куцукц.</value>
+  </data>
 </root>

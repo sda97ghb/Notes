@@ -6,7 +6,13 @@ namespace Notes
 {
     public partial class NotesForm : Form
     {
+        const int distanceX = 40; ///< distance between notes
+        const int distanceY = 40; ///< distance between notes
+        const int minWidth = 250; ///< single note width
+        const int minHeight = 200;///< single note height
+
         List<NoteControl> notes = new List<NoteControl>();
+
         public NotesForm()
         {
             InitializeComponent();
@@ -29,22 +35,21 @@ namespace Notes
             calculateScrollingMax();
         }
 
-        void placeNoteControls(int deltaY)
+        void placeNoteControls(int offsetY)
         {
-            // TODO n==0 problem
-
-            const int min = 340;
-            int numberOfColumns = NotesArea.Width / min;
-            int d = (NotesArea.Width - 20) - min * numberOfColumns - 20 * (numberOfColumns - 1) - 40;
-            d /= numberOfColumns+1;
-            int columnWidth = min + d;
-            const int magicNumber = 300;
+            int numberOfColumns = (NotesArea.Width - distanceX) / (minWidth + distanceX);
+            int offsetX;
+            if (notes.Count < numberOfColumns)
+                offsetX = (NotesArea.Width - ((minWidth + distanceX) * notes.Count + distanceX)) / 2;
+            else
+                offsetX = (NotesArea.Width - ((minWidth + distanceX) * numberOfColumns + distanceX)) / 2;
 
             for (int i = 0; i < notes.Count; ++i)
             {
-                notes[i].Width = columnWidth;
-                notes[i].Left = 20 + (columnWidth + 20) * (i % numberOfColumns);
-                notes[i].Top = 20 + magicNumber * (i / numberOfColumns) - deltaY;
+                notes[i].Width = minWidth;
+                notes[i].Height = minHeight;
+                notes[i].Left = offsetX + distanceX + (minWidth + distanceX) * (i % numberOfColumns);
+                notes[i].Top = distanceY + (minHeight + distanceY) * (i / numberOfColumns) - offsetY;
             }
         }
 
@@ -55,13 +60,13 @@ namespace Notes
                 if (max < note.Top + note.Height)
                     max = note.Top + note.Height;
             max -= NotesArea.Height;
+            max += distanceY;
             NotesAreaScrollbar.Maximum = max > 0 ? max : 0;
         }
 
         private void NotesAreaScrollbar_Scroll(object sender, ScrollEventArgs e)
         {
             placeNoteControls(NotesAreaScrollbar.Value);
-
         }
 
         private void NotesForm_Resize_1(object sender, EventArgs e)

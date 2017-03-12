@@ -38,6 +38,7 @@
             // AddNoteButton
             // 
             this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddNoteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(176)))), ((int)(((byte)(216)))));
             this.AddNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNoteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddNoteButton.Location = new System.Drawing.Point(666, 1);
@@ -45,7 +46,7 @@
             this.AddNoteButton.Size = new System.Drawing.Size(40, 40);
             this.AddNoteButton.TabIndex = 0;
             this.AddNoteButton.Text = "+";
-            this.AddNoteButton.UseVisualStyleBackColor = true;
+            this.AddNoteButton.UseVisualStyleBackColor = false;
             this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
             // 
             // NotesAreaScrollbar
@@ -83,19 +84,20 @@
             // 
             // MenuButton
             // 
+            this.MenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(176)))), ((int)(((byte)(216)))));
             this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MenuButton.Location = new System.Drawing.Point(0, 0);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.Size = new System.Drawing.Size(60, 60);
             this.MenuButton.TabIndex = 4;
             this.MenuButton.Text = "=";
-            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.UseVisualStyleBackColor = false;
             // 
             // NotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(128)))), ((int)(((byte)(186)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(133)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(708, 475);
             this.Controls.Add(this.MenuButton);
             this.Controls.Add(this.NotesAreaScrollbar);

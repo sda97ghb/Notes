@@ -21,5 +21,10 @@ namespace Notes
         {
 
         }
+
+        private void NoteControl_Resize(object sender, EventArgs e)
+        {
+
+        }
     }
 }
