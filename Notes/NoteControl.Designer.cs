@@ -28,59 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoteControl));
-            this.Text = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NoteText = new System.Windows.Forms.Label();
+            this.ShareButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
+            this.ExpandButton = new System.Windows.Forms.Button();
+            this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
-            // Text
+            // NoteText
             // 
-            this.Text.AutoSize = true;
-            this.Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Text.Location = new System.Drawing.Point(8, 8);
-            this.Text.MaximumSize = new System.Drawing.Size(200, 0);
-            this.Text.Name = "Text";
-            this.Text.Size = new System.Drawing.Size(198, 221);
-            this.Text.TabIndex = 1;
-            this.Text.Text = resources.GetString("Text.Text");
-            this.Text.Click += new System.EventHandler(this.Text_Click);
+            this.NoteText.AutoSize = true;
+            this.NoteText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NoteText.Location = new System.Drawing.Point(0, 0);
+            this.NoteText.Margin = new System.Windows.Forms.Padding(3);
+            this.NoteText.MaximumSize = new System.Drawing.Size(215, 0);
+            this.NoteText.Name = "NoteText";
+            this.NoteText.Padding = new System.Windows.Forms.Padding(5);
+            this.NoteText.Size = new System.Drawing.Size(212, 231);
+            this.NoteText.TabIndex = 1;
+            this.NoteText.Text = resources.GetString("NoteText.Text");
+            this.NoteText.Click += new System.EventHandler(this.Text_Click);
             // 
-            // button1
+            // ShareButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::Notes.Properties.Resources.ellipsis16;
-            this.button1.Location = new System.Drawing.Point(8, 169);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 23);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
+            this.ShareButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShareButton.FlatAppearance.BorderSize = 0;
+            this.ShareButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShareButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ShareButton.Image = global::Notes.Properties.Resources.share_32;
+            this.ShareButton.Location = new System.Drawing.Point(215, 35);
+            this.ShareButton.Name = "ShareButton";
+            this.ShareButton.Size = new System.Drawing.Size(35, 35);
+            this.ShareButton.TabIndex = 3;
+            this.toolTips.SetToolTip(this.ShareButton, "Share");
+            this.ShareButton.UseVisualStyleBackColor = true;
             // 
             // EditButton
             // 
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditButton.FlatAppearance.BorderSize = 0;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.ForeColor = System.Drawing.Color.Transparent;
-            this.EditButton.Image = global::Notes.Properties.Resources.edit32;
-            this.EditButton.Location = new System.Drawing.Point(212, 8);
+            this.EditButton.Image = global::Notes.Properties.Resources.Edit_32;
+            this.EditButton.Location = new System.Drawing.Point(215, 0);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(30, 30);
+            this.EditButton.Size = new System.Drawing.Size(35, 35);
             this.EditButton.TabIndex = 0;
+            this.toolTips.SetToolTip(this.EditButton, "Edit");
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // ExpandButton
+            // 
+            this.ExpandButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExpandButton.FlatAppearance.BorderSize = 0;
+            this.ExpandButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExpandButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ExpandButton.Image = global::Notes.Properties.Resources.ellipsis16;
+            this.ExpandButton.Location = new System.Drawing.Point(215, 178);
+            this.ExpandButton.Name = "ExpandButton";
+            this.ExpandButton.Size = new System.Drawing.Size(35, 35);
+            this.ExpandButton.TabIndex = 2;
+            this.toolTips.SetToolTip(this.ExpandButton, "Expand");
+            this.ExpandButton.UseVisualStyleBackColor = true;
+            this.ExpandButton.Click += new System.EventHandler(this.ExpandButton_Click);
             // 
             // NoteControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(234)))), ((int)(((byte)(182)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(228)))), ((int)(((byte)(154)))));
+            this.Controls.Add(this.ShareButton);
             this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Text);
+            this.Controls.Add(this.ExpandButton);
+            this.Controls.Add(this.NoteText);
+            this.MinimumSize = new System.Drawing.Size(0, 70);
             this.Name = "NoteControl";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(250, 200);
+            this.Size = new System.Drawing.Size(250, 213);
             this.Resize += new System.EventHandler(this.NoteControl_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -90,7 +117,9 @@
         #endregion
 
         private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.Label Text;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label NoteText;
+        private System.Windows.Forms.Button ExpandButton;
+        private System.Windows.Forms.Button ShareButton;
+        private System.Windows.Forms.ToolTip toolTips;
     }
 }

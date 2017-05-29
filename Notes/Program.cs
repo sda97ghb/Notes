@@ -16,7 +16,10 @@ namespace Notes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NotesForm());
+            NotesForm form = new NotesForm();
+            form.init();
+            if (!form.IsDisposed)
+                Application.Run(form);
         }
     }
 }

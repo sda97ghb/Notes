@@ -1,0 +1,49 @@
+<notes>
+  <category name="My notes">
+    <note id="1">
+      <text>
+				List:
+				- 123
+				- qwe
+				- asd
+				- zxc
+			</text>
+    </note>
+    <note id="2">
+      <text>
+				\_/
+				{OvO}
+				(\  /)
+				  ^^
+			</text>
+    </note>
+    <note id="3">
+      <text>
+				Title
+				
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+				Note text 1.
+			</text>
+    </note>
+  </category>
+  <category name="Received">
+    <note id="4">
+      <text>
+				It's a received note!
+			</text>
+    </note>
+  </category>
+</notes>

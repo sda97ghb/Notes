@@ -33,7 +33,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,11 +51,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AuthorizationForm.Designer.cs">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoteEditingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoteEditingForm.Designer.cs">
+      <DependentUpon>NoteEditingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotesForm.Designer.cs">
+      <DependentUpon>NotesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelloForm.Designer.cs">
+      <DependentUpon>HelloForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NoteControl.cs">
       <SubType>UserControl</SubType>
@@ -59,24 +81,63 @@
     <Compile Include="NoteControl.Designer.cs">
       <DependentUpon>NoteControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotesModel.cs" />
+    <Compile Include="NotesOfflineModel.cs" />
+    <Compile Include="NotesSqlModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoteEditingForm.resx">
+      <DependentUpon>NoteEditingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotesForm.resx">
+      <DependentUpon>NotesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelloForm.resx">
+      <DependentUpon>HelloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoteControl.resx">
       <DependentUpon>NoteControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsControl.resx">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,6 +163,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\ellipsis16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\backgroundForNotesWithEffectsCutted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menu button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\friends icon 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\settings 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\my notes menu 32 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\friends icon 32 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\settings 32 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Edit 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\save 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\back arrow 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\back arrow filled 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\New note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\share 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
